@@ -31,6 +31,10 @@ class Calculator:
         self.__mark = first_number ** second_number
         return self.__mark
 
+    def factorial(self, number):
+        self.__mark = 1 if number == 1 else number * self.factorial(number - 1)
+        return self.__mark
+
     def sin(self, number):
         self.__mark = math.sin(number)
         return self.__mark

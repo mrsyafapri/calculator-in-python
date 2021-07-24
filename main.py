@@ -15,7 +15,7 @@ def decor(func):
 def menu():
     print("Menu\t:")
     print(
-        "1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n5. Modulus\n6. Exponentiation\n7. Sin\n8. Cos\n9. Tan\n10. Exit"
+        "1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n5. Modulus\n6. Exponentiation\n7. Factorial\n8. Sin\n9. Cos\n10. Tan\n11. Exit"
     )
 
 
@@ -25,11 +25,11 @@ print("Created by MRSyafapri")
 menu()
 choice = int(input("Enter your choice: "))
 calculator = Calculator()
-while choice != 10:
+while choice != 11:
     if choice >= 1 and choice <= 6:
         first_number = int(input("Enter first number: "))
         second_number = int(input("Enter second number: "))
-    elif choice >= 7 and choice <= 9:
+    elif choice >= 7 and choice <= 10:
         number = int(input("Enter number: "))
     if choice == 1:
         result = calculator.addition(first_number, second_number)
@@ -62,16 +62,21 @@ while choice != 10:
         menu()
         choice = int(input("Enter your choice: "))
     elif choice == 7:
+        result = calculator.factorial(number)
+        print("{}! = {}".format(number, result))
+        menu()
+        choice = int(input("Enter your choice: "))
+    elif choice == 8:
         result = calculator.sin(number)
         print("sin {} = {}".format(number, result))
         menu()
         choice = int(input("Enter your choice: "))
-    elif choice == 8:
+    elif choice == 9:
         result = calculator.cos(number)
         print("cos {} = {}".format(number, result))
         menu()
         choice = int(input("Enter your choice: "))
-    elif choice == 9:
+    elif choice == 10:
         result = calculator.tan(number)
         print("tan {} = {}".format(number, result))
         menu()
